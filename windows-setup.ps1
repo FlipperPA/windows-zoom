@@ -47,12 +47,14 @@ msiexec /i ZoomInstallerFull.msi /quiet /qn /norestart /log install.log ZoomAuto
 rm ZoomInstallerFull.msi
 
 Write-Output("We'll create a shortcut on the Desktop to start your meeting! If you don't want this, just don't enter anything.")
-$Meeting_ID = Read-Host "What is your Zoom Meeting ID Number (example: 123456789)?"
-$Meeting_PW = Read-Host "What is your Zoom Meeting Hashed Password (example: WjZMeExzU1ErUUU0OUpxS1BpRmc2QT09)?"
+$Meeting_ID = Read-Host "Enter your Zoom Meeting ID Number (example: 123456789)"
+$Meeting_PW = Read-Host "Enter your Zoom Meeting Hashed Password (example: U0MeOUpxS1BpRmc2ExzU1WjZErUUQT09)"
 
 $WshShell = New-Object -comObject WScript.Shell
 $Shortcut = $WshShell.CreateShortcut("$Home\Desktop\Launch Zoom Meeting.lnk")
-$Shortcut.TargetPath = "\"C:\Program Files (x86)\Zoom\bin\Zoom.exe\" \"--url=zoommtg://zoom.us/join?confno=$($Meeting_ID)&pwd=$($Meeting_PW)&zc=0&uname=AA Meeting"
+$Shortcut.TargetPath = "C:\Program Files (x86)\Zoom\bin\Zoom.exe"
+$Shortcut.Arguments = '"--url=zoommtg://zoom.us/join?confno=' + $Meeting_ID + '&pwd=' + $Meeting_PW + '&zc=0&uname=AA Meeting"'
+$Shortcut.WorkingDirectory = "C:\Program Files (x86)\Zoom\bin"
 $Shortcut.Save()
 
 Write-Output("Changing registry settings for taskbar, lockscreen, and more...")
