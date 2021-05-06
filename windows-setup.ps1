@@ -41,19 +41,10 @@ Add-content $Env:TEMP\start_menu_layout.xml $start_menu_layout
 Import-StartLayout -layoutpath $Env:TEMP\start_menu_layout.xml -mountpath $Env:SYSTEMDRIVE\
 Remove-Item $Env:TEMP\start_menu_layout.xml
 
-# Uninstall OneDrive - this is a bit of an adventure...
-Write-Output("Uninstalling OneDrive... download it if you want it.")
-
-taskkill.exe /F /IM "OneDrive.exe"
-
-echo "Remove OneDrive"
-if (Test-Path "$env:systemroot\System32\OneDriveSetup.exe") {
-    & "$env:systemroot\System32\OneDriveSetup.exe" /uninstall
-}
-if (Test-Path "$env:systemroot\SysWOW64\OneDriveSetup.exe") {
-    & "$env:systemroot\SysWOW64\OneDriveSetup.exe" /uninstall
-}
-Set-ItemProperty -Path 'HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\OneDrive' -Name 'DisableFileSyncNGSC' -Value 1  2>&1 | out-null
+Write-Output("Installing Zoom...")
+Invoke-WebRequest https://www.zoom.us/client/latest/ZoomInstallerFull.msi -OutFile ZoomInstallerFull.msi
+msiexec /i ZoomInstallerFull.msi /quiet /qn /norestart /log install.log ZoomAutoUpdate="true" ZoomAutoStart="true" ZSILENTSTART="true" ZNoDesktopShortCut="true"
+rm ZoomInstallerFull.msi
 
 Write-Output("Changing registry settings for taskbar, lockscreen, and more...")
 # Set the Windows Taskbar to never combine items (Windows 7 style)
