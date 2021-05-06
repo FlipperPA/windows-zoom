@@ -46,6 +46,11 @@ Invoke-WebRequest https://www.zoom.us/client/latest/ZoomInstallerFull.msi -OutFi
 msiexec /i ZoomInstallerFull.msi /quiet /qn /norestart /log install.log ZoomAutoUpdate="true" ZoomAutoStart="true" ZSILENTSTART="true" ZNoDesktopShortCut="true"
 rm ZoomInstallerFull.msi
 
+$WshShell = New-Object -comObject WScript.Shell
+$Shortcut = $WshShell.CreateShortcut("$Home\Desktop\Launch Zoom Meeting.lnk")
+$Shortcut.TargetPath = "\"C:\Program Files (x86)\Zoom\bin\Zoom.exe\" \"--url=zoommtg://zoom.us/join?confno=2151234215&pwd=WjZMeExzU1ErUUU0OUpxS1BpRmc2QT09&zc=0&uname=AA Meeting"
+$Shortcut.Save()
+
 Write-Output("Changing registry settings for taskbar, lockscreen, and more...")
 # Set the Windows Taskbar to never combine items (Windows 7 style)
 Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced' -Name 'TaskbarGlomLevel' -Value 2
