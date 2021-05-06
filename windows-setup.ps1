@@ -1,4 +1,4 @@
-# This script sets up Windows 10 the way I like it.
+# This script sets up Windows 10 by removing a ton of crapware, setting some sane defaults, installing Zoom and creating a shortcut to join a meeting.
 # It should be run in Administrator mode from PowerShell.
 
 # Uninstall the crapware that comes with Windows 10 - leave the Store
