@@ -62,7 +62,7 @@ if($Meeting_ID.Length > 0) {
 $WshShell = New-Object -comObject WScript.Shell
 $Shortcut = $WshShell.CreateShortcut("$Home\Desktop\Shutdown Computer.lnk")
 $Shortcut.TargetPath = "C:\Windows\System32\shutdown.exe"
-$Shortcut.Arguments = '"-s -t 00"'
+$Shortcut.Arguments = "-s -t 00"
 $Shortcut.WorkingDirectory = "C:\Windows\System32"
 $Shortcut.Save()
 
