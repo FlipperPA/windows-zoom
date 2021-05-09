@@ -48,7 +48,7 @@ rm ZoomInstallerFull.msi
 
 Write-Output("We'll create a shortcut on the Desktop to start your meeting! If you don't want this, just don't enter anything.")
 $Meeting_ID = Read-Host "Enter your Zoom Meeting ID Number (example: 123456789)"
-if($Meeting_ID.Length) {
+if($Meeting_ID.Length > 0) {
     $Meeting_PW = Read-Host "Enter your Zoom Meeting Hashed Password (example: U0MeOUpxS1BpRmc2ExzU1WjZErUUQT09)"
 
     $WshShell = New-Object -comObject WScript.Shell
