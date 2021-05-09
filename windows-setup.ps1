@@ -69,8 +69,10 @@ Write-Output("Changing registry settings for taskbar, lockscreen, and more...")
 Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced' -Name 'TaskbarGlomLevel' -Value 2
 # Set the Windows Taskbar to use small icons
 Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced' -Name 'TaskbarSmallIcons' -Value 1
-# Set Desktop to use large icons
-Set-ItemProperty -Path 'HKCU:\Control Panel\Desktop\WindowMetrics' -Name 'Shell Icon Size' -Value 64
+# Set Desktop to use extra large icons
+Set-ItemProperty -Path 'HKCU:\SOFTWARE\Microsoft\Windows\Shell\Bags\1\Desktop' -Name 'IconSize' -Value 256
+Set-ItemProperty -Path 'HKCU:\SOFTWARE\Microsoft\Windows\Shell\Bags\1\Desktop' -Name 'Mode' -Value 1
+Set-ItemProperty -Path 'HKCU:\SOFTWARE\Microsoft\Windows\Shell\Bags\1\Desktop' -Name 'LogicalViewMode ' -Value 3
 # Disable Cortana Button
 Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced' -Name 'ShowCortanaButton' -Value 0
 # Disable Task View Button
