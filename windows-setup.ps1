@@ -57,11 +57,20 @@ $Shortcut.Arguments = '"--url=zoommtg://zoom.us/join?confno=' + $Meeting_ID + '&
 $Shortcut.WorkingDirectory = "C:\Program Files (x86)\Zoom\bin"
 $Shortcut.Save()
 
+$WshShell = New-Object -comObject WScript.Shell
+$Shortcut = $WshShell.CreateShortcut("$Home\Desktop\Shutdown Computer.lnk")
+$Shortcut.TargetPath = "C:\Windows\System32\shutdown.exe"
+$Shortcut.Arguments = '"-s -t 00"'
+$Shortcut.WorkingDirectory = "C:\Windows\System32"
+$Shortcut.Save()
+
 Write-Output("Changing registry settings for taskbar, lockscreen, and more...")
 # Set the Windows Taskbar to never combine items (Windows 7 style)
 Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced' -Name 'TaskbarGlomLevel' -Value 2
 # Set the Windows Taskbar to use small icons
 Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced' -Name 'TaskbarSmallIcons' -Value 1
+# Set Desktop to use large icons
+Set-ItemProperty -Path 'HKCU:\Control Panel\Desktop\WindowMetrics' -Name 'Shell Icon Size' -Value 64
 # Disable Cortana Button
 Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced' -Name 'ShowCortanaButton' -Value 0
 # Disable Task View Button
