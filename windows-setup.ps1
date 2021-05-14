@@ -57,6 +57,7 @@ if($Meeting_ID.Length > 0) {
     $Shortcut.Arguments = '"--url=zoommtg://zoom.us/join?confno=' + $Meeting_ID + '&pwd=' + $Meeting_PW + '&zc=0&uname=AA Meeting"'
     $Shortcut.WorkingDirectory = "C:\Program Files (x86)\Zoom\bin"
     $Shortcut.Save()
+    copy "$Home\Desktop\Launch Zoom Meeting.lnk" "%appdata%\Microsoft\Windows\Start Menu\Programs\Startup"
 }
 
 $WshShell = New-Object -comObject WScript.Shell
