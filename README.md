@@ -4,8 +4,8 @@ A PowerShell script to set up a fresh Windows 10 install with basic settings, re
 
 ## How to Use It
 
-(1) Start up PowerShell as an Administrator. You can do this by pressing the Start button in Windows, typing `powershell`, then right clicking the `Winodws PowerShell` entry and selecting `Run as Administrator`.
-(2) Run the follow commands in the PowerShell terminal window to install:
+1. Start up PowerShell as an Administrator. You can do this by pressing the Start button in Windows, typing `powershell`, then right clicking the `Winodws PowerShell` entry and selecting `Run as Administrator`.
+1. Run the follow commands in the PowerShell terminal window to install:
 
 ```powershell
 Invoke-WebRequest https://raw.githubusercontent.com/FlipperPA/windows-zoom/main/windows-setup.ps1 -OutFile windows-setup.ps1
