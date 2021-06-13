@@ -43,7 +43,7 @@ Remove-Item $Env:TEMP\start_menu_layout.xml
 
 Write-Output("Installing Zoom...")
 Invoke-WebRequest https://www.zoom.us/client/latest/ZoomInstallerFull.msi -OutFile ZoomInstallerFull.msi
-msiexec /i ZoomInstallerFull.msi /quiet /qn /norestart /log install.log ZoomAutoUpdate="true" ZoomAutoStart="true" ZSILENTSTART="true" ZNoDesktopShortCut="true"
+msiexec /i ZoomInstallerFull.msi /quiet /qn /norestart /log install.log ZoomAutoUpdate="true" ZoomAutoStart="true" ZSILENTSTART="true" ZNoDesktopShortCut="true" ZRecommend="AudioAutoAdjust=0;FullScreenWhenJoin=1;Min2Tray=0;ZoomAutoStart=1;SetAudioSignalProcessType=1;AudioAutoAdjust=0"
 rm ZoomInstallerFull.msi
 
 $Meeting_Count = 0
@@ -65,7 +65,8 @@ while (true) {
     $Shortcut.Save()
     
     if($Meeting_Count == 1) {
-        copy "$Home\Desktop\Launch Zoom Meeting.lnk" "%appdata%\Microsoft\Windows\Start Menu\Programs\Startup"
+        $StartUp = "$Env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
+        New-Item -ItemType SymbolicLink -Path "$StartUp" -Name "ZoomAutoStart.lnk" -Value "$Home\Desktop\Launch Zoom Meeting.lnk"
     }
 }
 
