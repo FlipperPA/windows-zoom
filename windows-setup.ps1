@@ -55,18 +55,20 @@ while (true) {
     }
 
     $Meeting_PW = Read-Host "Enter your Zoom Meeting Hashed Password (example: U0MeOUpxS1BpRmc2ExzU1WjZErUUQT09)"
+    $Meeting_Name = Read-Host "Enter your Zoom Meeting Name (example: The Hope Group)"
     $Meeting_Count++
 
     $WshShell = New-Object -comObject WScript.Shell
-    $Shortcut = $WshShell.CreateShortcut("$Home\Desktop\Launch Zoom Meeting.lnk")
+    $Shortcut = $WshShell.CreateShortcut("$Home\Desktop\Launch Zoom " + $Meeting_Name + ".lnk")
     $Shortcut.TargetPath = "C:\Program Files (x86)\Zoom\bin\Zoom.exe"
-    $Shortcut.Arguments = '"--url=zoommtg://zoom.us/join?confno=' + $Meeting_ID + '&pwd=' + $Meeting_PW + '&zc=0&uname=AA Meeting"'
+    $Shortcut.Arguments = '"--url=zoommtg://zoom.us/join?confno=' + $Meeting_ID + '&pwd=' + $Meeting_PW + '&zc=0&uname=' + $Meeting_Name + '"'
     $Shortcut.WorkingDirectory = "C:\Program Files (x86)\Zoom\bin"
     $Shortcut.Save()
     
+    # Automatically launch Zoom into the first meeting added.
     if($Meeting_Count == 1) {
         $StartUp = "$Env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
-        New-Item -ItemType SymbolicLink -Path "$StartUp" -Name "ZoomAutoStart.lnk" -Value "$Home\Desktop\Launch Zoom Meeting.lnk"
+        New-Item -ItemType SymbolicLink -Path "$StartUp" -Name "ZoomAutoStart.lnk" -Value "$Home\Desktop\Launch Zoom " + $Meeting_Name + ".lnk"
     }
 }
 
