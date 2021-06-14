@@ -47,7 +47,7 @@ msiexec /i ZoomInstallerFull.msi /quiet /qn /norestart /log install.log ZoomAuto
 rm ZoomInstallerFull.msi
 
 $Meeting_Count = 0
-while (true) {
+while (1) {
     Write-Output("Let's create a shortcut to a Zoom meeting on your desktop. If you don't want to add another, don't enter an ID number.")
     $Meeting_ID = Read-Host "Enter your Zoom Meeting ID Number (example: 123456789)"
     if($Meeting_ID.Length == 0) {
