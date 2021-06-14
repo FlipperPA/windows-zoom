@@ -59,7 +59,8 @@ while (1) {
     $Meeting_Count++
 
     $WshShell = New-Object -comObject WScript.Shell
-    $Shortcut = $WshShell.CreateShortcut("$Home\Desktop\Launch Zoom " + $Meeting_Name + ".lnk")
+    $Shorcut_Path = "$Home\Desktop\Launch Zoom " + $Meeting_Name + ".lnk"
+    $Shortcut = $WshShell.CreateShortcut($Shortcut_Path)
     $Shortcut.TargetPath = "C:\Program Files (x86)\Zoom\bin\Zoom.exe"
     $Shortcut.Arguments = '"--url=zoommtg://zoom.us/join?confno=' + $Meeting_ID + '&pwd=' + $Meeting_PW + '&zc=0&uname=' + $Meeting_Name + '"'
     $Shortcut.WorkingDirectory = "C:\Program Files (x86)\Zoom\bin"
@@ -68,7 +69,7 @@ while (1) {
     # Automatically launch Zoom into the first meeting added.
     if($Meeting_Count -eq 1) {
         $StartUp = "$Env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
-        New-Item -ItemType SymbolicLink -Path "$StartUp" -Name "ZoomAutoStart.lnk" -Value "$Home\Desktop\Launch Zoom " + $Meeting_Name + ".lnk"
+        New-Item -ItemType SymbolicLink -Path "$StartUp" -Name "ZoomAutoStart.lnk" -Value $Shortcut_Path
     }
 }
 
