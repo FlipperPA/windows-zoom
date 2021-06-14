@@ -14,3 +14,7 @@ Set-ExecutionPolicy -Force Bypass
 Set-ExecutionPolicy -Force RemoteSigned
 rm .\windows-setup.ps1
 ```
+
+## Zoom Installation and Launch Options
+
+Here's a link to Zoom's various options, if you want to tweak the script: https://support.zoom.us/hc/en-us/articles/201362163-Mass-deployment-with-preconfigured-settings-for-Windows
