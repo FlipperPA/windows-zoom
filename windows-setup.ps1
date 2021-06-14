@@ -68,8 +68,8 @@ while (1) {
     
     # Automatically launch Zoom into the first meeting added.
     if($Meeting_Count -eq 1) {
-        $StartUp = "$Env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
-        New-Item -ItemType SymbolicLink -Path "$StartUp" -Name "ZoomAutoStart.lnk" -Value "$Shortcut_Path"
+        $StartUp = "$Env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\LaunchZoomMeeting.lnk"
+        New-Item -ItemType SymbolicLink -Path "$StartUp" -Target "$Shortcut_Path"
     }
 }
 
