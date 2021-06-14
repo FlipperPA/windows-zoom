@@ -59,7 +59,7 @@ while (1) {
     $Meeting_Count++
 
     $WshShell = New-Object -comObject WScript.Shell
-    $Shorcut_Path = "$Home\Desktop\Launch Zoom " + $Meeting_Name + ".lnk"
+    $Shortcut_Path = "$Home\Desktop\Launch Zoom " + $Meeting_Name + ".lnk"
     $Shortcut = $WshShell.CreateShortcut($Shortcut_Path)
     $Shortcut.TargetPath = "C:\Program Files (x86)\Zoom\bin\Zoom.exe"
     $Shortcut.Arguments = '"--url=zoommtg://zoom.us/join?confno=' + $Meeting_ID + '&pwd=' + $Meeting_PW + '&zc=0&uname=' + $Meeting_Name + '"'
