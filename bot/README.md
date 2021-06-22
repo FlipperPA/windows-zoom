@@ -3,6 +3,8 @@
 <img align="right" width="400" src="img/zoom-bot-1.jpg">
 These instructions will help you build your own Zoom-bot. The goal is to turn a Windows 10 computer into an appliance with one purpose: joining Zoom meetings. The script is written to keep the end product as straightforward as possible, with the goal of non-technical users being able to use the device.
 
+I will try to keep these instructions as clear as possible, but you're going to need intermediate technical know-how of Windows to make this happen. If you've installed Windows on your own, and know what a command prompt is, you're probably advanced enough to build your own Zoom-bot. If you haven't, there are many YouTube videos and tutorials online which might help, but I'm afraid I don't have time to answer every inquiry I get, as I'm already swamped building these out for recovery meetings in the Philadelphia area.
+
 ## Materials Required
 
 * A Windows 10 compatible computer (preferably an All-In-One)
@@ -13,3 +15,4 @@ These instructions will help you build your own Zoom-bot. The goal is to turn a 
 * A mount with wheels and VESA mounting interface, [such as this one](https://smile.amazon.com/Rfiver-Rolling-Universal-Display-Trolley/dp/B07JHWCQW5/).
 * A power strip with a long lead cable, [such as this one](https://smile.amazon.com/Kensington-Guardian-15-Foot-Protector-K38215NA/dp/B00PBWV6SW/).
 * Zip ties to keep cabling contained, [such as these](https://smile.amazon.com/Pounds-Tensile-Strength-Pieces-Karoka/dp/B08K4PTCW1/).
+* A USB flash drive to install Windows 10. [You can create Windows 10 installation media with this tool](https://go.microsoft.com/fwlink/?LinkId=691209).
