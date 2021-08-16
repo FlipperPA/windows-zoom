@@ -23,7 +23,8 @@ I will try to keep these instructions as clear as possible, but you're going to 
 * After the initial setup, the computer will reboot and prompt you to finish your installation.
     * First, you'll have to select your country and keyboard layout.
     * After this, it is VERY important to say YOU DO NOT HAVE AN INTERNET CONNECTION.
-    * This is the only way to set up a local account without a passowrd.
+    * This is the only way to set up a local account without a passowrd. It will prompt you several times trying to get you to create a Microsoft Online account. DO NOT. Just create the local account.
     * Continue, and set up a local account, and when it prompts you for a password, leave it blank.
     * You will be able to connect to the internet after the installation is complete.
-* Continue
+* Continue through the prompts until Windows starts up.
+* 
