@@ -16,3 +16,14 @@ I will try to keep these instructions as clear as possible, but you're going to 
 * A power strip with a long lead cable, [such as this one](https://smile.amazon.com/Kensington-Guardian-15-Foot-Protector-K38215NA/dp/B00PBWV6SW/).
 * Zip ties to keep cabling contained, [such as these](https://smile.amazon.com/Pounds-Tensile-Strength-Pieces-Karoka/dp/B08K4PTCW1/).
 * A USB flash drive to install Windows 10. [You can create Windows 10 installation media with this tool](https://go.microsoft.com/fwlink/?LinkId=691209).
+
+## Installation
+
+* Boot to the USB flash drive to and install a fresh, clean copy of Windows 10. [This may help](https://www.windowscentral.com/how-do-clean-installation-windows-10), but you'll need some Windows expertise.
+* After the initial setup, the computer will reboot and prompt you to finish your installation.
+    * First, you'll have to select your country and keyboard layout.
+    * After this, it is VERY important to say YOU DO NOT HAVE AN INTERNET CONNECTION.
+    * This is the only way to set up a local account without a passowrd.
+    * Continue, and set up a local account, and when it prompts you for a password, leave it blank.
+    * You will be able to connect to the internet after the installation is complete.
+* Continue
