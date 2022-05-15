@@ -27,4 +27,4 @@ I will try to keep these instructions as clear as possible, but you're going to 
     * Continue, and set up a local account, and when it prompts you for a password, leave it blank.
     * You will be able to connect to the internet after the installation is complete.
 * Continue through the prompts until Windows starts up.
-* 
+* Once Windows has started, you can continue with the [rest of the script to install Zoom and your meeting icons](https://github.com/FlipperPA/windows-zoom/blob/main/README.md).
