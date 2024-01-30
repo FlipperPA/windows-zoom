@@ -1,6 +1,6 @@
-# windows-zoom
+# Windows-Zoom for Windows 11
 
-A PowerShell script to set up a fresh Windows 10 install with basic settings, remove crapware, and start a specific Zoom meeting. You shouldn't run scripts like this without understanding what they do, or if you know and trust the author.
+A PowerShell script to set up a fresh Windows 11 install with basic settings, remove crapware, and start a specific Zoom meeting. You shouldn't run scripts like this without understanding what they do, or if you know and trust the author.
 
 ## How to Use It
 
