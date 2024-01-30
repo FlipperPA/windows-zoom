@@ -83,6 +83,9 @@ Invoke-WebRequest https://www.zoom.us/client/latest/ZoomInstallerFull.msi -OutFi
 msiexec /i ZoomInstallerFull.msi /qn /norestart /log install.log ZoomAutoUpdate="true" ZoomAutoStart="true" zSilentStart="true" ZNoDesktopShortCut="true" ZRecommend="AudioAutoAdjust=0;FullScreenWhenJoin=1;Min2Tray=0;ZoomAutoStart=1;SetAudioSignalProcessType=1;AudioAutoAdjust=0"
 rm ZoomInstallerFull.msi
 
+# Set Zoom to stay in windowed mode for startup
+New-Item -Path 'HKLM:\Software\Policies\Zoom\Zoom Meetings\Meetings' -Name 'EnterFullScreenWhenJoinMeeting' -Value '0' -f
+
 $Meeting_Count = 0
 while (1) {
     Write-Output("Let's create a shortcut to a Zoom meeting on your desktop. If you don't want to add another, don't enter an ID number.")
