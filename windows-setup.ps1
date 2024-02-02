@@ -102,7 +102,7 @@ while (1) {
     $Shortcut_Path = "$Home\Desktop\Launch Zoom " + $Meeting_Name + ".lnk"
     $Shortcut = $WshShell.CreateShortcut($Shortcut_Path)
     $Shortcut.TargetPath = "C:\Program Files (x86)\Zoom\bin\Zoom.exe"
-    $Shortcut.Arguments = '"--url=zoommtg://zoom.us/join?confno=' + $Meeting_ID + '&pwd=' + $Meeting_PW + '&zc=0&uname=' + $Meeting_Name + '"'
+    $Shortcut.Arguments = '"--url=zoommtg://zoom.us/join?action=join&confno=' + $Meeting_ID + '&pwd=' + $Meeting_PW + '&zc=0&uname=' + $Meeting_Name + '"'
     $Shortcut.WorkingDirectory = "C:\Program Files (x86)\Zoom\bin"
     $Shortcut.Save()
     
