@@ -1,14 +1,14 @@
 # Building Your Own Zoom Appliance (aka, the Zoom-bot!)
 
 <img align="right" width="400" src="img/zoom-bot-1.jpg">
-These instructions will help you build your own Zoom-bot. The goal is to turn a Windows 10 computer into an appliance with one purpose: joining Zoom meetings. The script is written to keep the end product as straightforward as possible, with the goal of non-technical users being able to use the device.
+These instructions will help you build your own Zoom-bot. The goal is to turn a Windows 11 computer into an appliance with one purpose: joining Zoom meetings. The script is written to keep the end product as straightforward as possible, with the goal of non-technical users being able to use the device.
 
 I will try to keep these instructions as clear as possible, but you're going to need intermediate technical know-how of Windows to make this happen. If you've installed Windows on your own, and know what a command prompt is, you're probably advanced enough to build your own Zoom-bot. If you haven't, there are many YouTube videos and tutorials online which might help.
 
 ## Materials Required
 
-* A Windows 10 compatible computer (preferably an All-In-One)
-    * Dell Inspiron One computers work wonderfully for this, as they have high quality JBL speakers, a touch screen, WiFi, and a decent web camera. [You can find these on eBay](https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=dell+inspiron+one+%282305%2C2310%2C2320%2C2330%29&_sacat=171957), but *BE CAREFUL*; many are being sold for parts, so read the description *IN FULL*.
+* A Windows 11 compatible computer
+    * Dell All-in-One machines with touch screens work wonderfully for this, as they have high quality JBL speakers, a touch screen, WiFi, and a decent web camera. [You can find these on eBay](https://www.ebay.com/sch/i.html?_nkw=dell+all+in+one+touch+screen&_sacat=0&_odkw=dell+all+in+one+touchscreen&_osacat=0)), but *BE CAREFUL* to fully read the description *IN FULL*.
     * Other All-In-One machines will work as well, but many are not touch screen, which will also require a mouse.
 * An omnidirectional microphone, to pick up speech in the room, [such as this one](https://smile.amazon.com/gp/product/B00N1YPXW2/).
     * You will want a longer USB cable for this microphone, to be able to extend it to the center of the room, [such as this one](https://smile.amazon.com/gp/product/B002KL8N6A/).
