@@ -2,7 +2,7 @@
 
 A PowerShell script to set up a fresh Windows 11 install with basic settings, remove crapware, and start a specific Zoom meeting. You shouldn't run scripts like this willy-nilly, so the source is made fully available here.
 
-If you need help installing a basic Windows 11 machine, [here are instructions on how to install Windows 11 fresh on a machine](README-windows-setup.md).
+If you need help installing a basic Windows 11 machine, [here are instructions on how to install Windows 11 fresh on a machine](https://github.com/FlipperPA/windows-setup/blob/main/README-windows-setup.md).
 
 ## How to Use It
 
